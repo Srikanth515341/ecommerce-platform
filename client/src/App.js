@@ -1,6 +1,5 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated import for v6
 import HomePage from './HomePage';
 import ProductListPage from './ProductListPage';
 import ProductDetailPage from './ProductDetailPage';
@@ -9,11 +8,12 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/products" component={ProductListPage} />
-          <Route path="/product/:id" component={ProductDetailPage} />
-        </Switch>
+        <Routes>
+          {/* Define routes with the new syntax in React Router v6 */}
+          <Route path="/" element={<HomePage />} /> {/* Home Page */}
+          <Route path="/products" element={<ProductListPage />} /> {/* Product List Page */}
+          <Route path="/product/:id" element={<ProductDetailPage />} /> {/* Product Detail Page */}
+        </Routes>
       </div>
     </Router>
   );
