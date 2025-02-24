@@ -3,16 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Up
 import HomePage from './HomePage';
 import ProductListPage from './ProductListPage';
 import ProductDetailPage from './ProductDetailPage';
+import Cart from './Cart'; // Import Cart page
 
 const App = () => {
   return (
     <Router>
       <div>
         <Routes>
-          {/* Define routes with the new syntax in React Router v6 */}
-          <Route path="/" element={<HomePage />} /> {/* Home Page */}
-          <Route path="/products" element={<ProductListPage />} /> {/* Product List Page */}
-          <Route path="/product/:id" element={<ProductDetailPage />} /> {/* Product Detail Page */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductListPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<Cart />} /> {/* Add Cart route */}
         </Routes>
       </div>
     </Router>
