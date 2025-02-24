@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from './CartContext'; // Import useCart hook
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart(); // Access cart and removeFromCart
@@ -19,6 +20,9 @@ const Cart = () => {
           ))}
         </div>
       )}
+      <Link to="/checkout">
+        <button>Proceed to Checkout</button> {/* Link to checkout page */}
+      </Link>
     </div>
   );
 };
